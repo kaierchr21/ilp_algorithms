@@ -1,0 +1,2 @@
+streamlit>=1.30
+pulp>=2.8
