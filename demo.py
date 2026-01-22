@@ -8,6 +8,7 @@ import time
 # ==================================================
 st.set_page_config(layout="wide")
 st.title("ILP-Based Production Sequencing with Sequence-Dependent Setup Costs")
+
 st.markdown(
     """
     **Christoph Kaier**
@@ -34,6 +35,17 @@ st.markdown(
     """
 )
 
+st.divider()
+
+st.header("Industrial Motivation")
+
+st.markdown("""
+In automotive paint shops, jobs must be processed sequentially on a **single bottleneck machine**.
+Frequent **color and product changes** cause high setup costs.
+
+The sequencing problem is **NP-hard** once sequence-dependent setup costs are considered.
+This demonstration shows how **exact ILP models** can solve small instances optimally.
+""")
 st.divider()
 
 # ==================================================
@@ -129,6 +141,19 @@ st.markdown(
     The total cost of a sequence is defined as the **sum of all transition costs**.
     """
 )
+
+st.latex(r"""
+\sigma_{ij} =
+\begin{cases}
+5 & \text{if color changes} \\
+0 & \text{otherwise}
+\end{cases}
++
+\begin{cases}
+1 & \text{if product type changes} \\
+0 & \text{otherwise}
+\end{cases}
+""")
 
 # ==================================================
 # Cost functions
